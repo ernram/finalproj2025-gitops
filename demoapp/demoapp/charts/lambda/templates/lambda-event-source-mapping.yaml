@@ -4,11 +4,11 @@
 apiVersion: lambda.services.k8s.aws/v1alpha1
 kind: EventSourceMapping
 metadata:
-  name: prod-lambda
+  name: dev-lambda
   namespace: ack-lambda
   annotations:
-    services.k8s.aws/region: us-east-1
+    services.k8s.aws/region: us-east-2
 spec:
-  functionName: prod-lambda
-  eventSourceARN: arn:aws:sqs:us-east-1:841483048185:prod-conversion-to-pdf--20240214220254529200000002.fifo
+  functionName: dev-lambda
+  eventSourceARN: arn:aws:sqs:us-east-2:038891198925:dev-conversion-to-pdf--20250315175823762900000006.fifo
   batchSize: 10
